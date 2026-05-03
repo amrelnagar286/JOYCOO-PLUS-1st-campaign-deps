@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOYCOO-PLUS-1st-CAMP-APR-2026-DMD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #0a2647;
+  --primary-light: #144272;
+  --accent: #205295;
+  --accent-light: #2c74b3;
+  --gold: #d4a843;
+  --gold-light: #f0d68a;
+  --bg: #f8f9fb;
+  --bg-white: #ffffff;
+  --text: #1a1a2e;
+  --text-light: #555;
+  --text-muted: #888;
+  --success: #27ae60;
+  --success-bg: #eafaf1;
+  --warning: #f39c12;
+  --warning-bg: #fef9e7;
+  --danger: #e74c3c;
+  --danger-bg: #fdedec;
+  --info: #2980b9;
+  --info-bg: #eaf2f8;
+  --border: #e0e4e8;
+  --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* === HEADER === */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--accent) 100%);
+  color: white;
+  padding: 60px 0 50px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero .badge {
+  display: inline-block;
+  background: rgba(212,168,67,0.2);
+  border: 1px solid rgba(212,168,67,0.4);
+  color: var(--gold-light);
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+.hero h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.hero .subtitle {
+  font-size: 17px;
+  opacity: 0.85;
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 20px;
+  justify-content: center;
+}
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+/* === NAVIGATION === */
+.toc-bar {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.toc-bar .container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.toc-bar .container::-webkit-scrollbar { display: none; }
+.toc-btn {
+  flex-shrink: 0;
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-white);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.toc-btn:hover, .toc-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* === SECTIONS === */
+.section {
+  padding: 50px 0;
+}
+.section:first-of-type { padding-top: 40px; }
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+.section-number {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.section-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.4;
+}
+.section-header .section-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* === CARDS === */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: var(--shadow-lg); }
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--gold);
+}
+.card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 18px 0 10px;
+  color: var(--text);
+}
+
+/* === INSIGHT BOX === */
+.insight-box {
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 20px 0;
+  border-right: 4px solid;
+}
+.insight-box.gold {
+  background: linear-gradient(135deg, #fef9e7, #fdf2d1);
+  border-color: var(--gold);
+}
+.insight-box.blue {
+  background: var(--info-bg);
+  border-color: var(--info);
+}
+.insight-box.green {
+  background: var(--success-bg);
+  border-color: var(--success);
+}
+.insight-box .insight-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* === TABLES === */
+.table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+thead {
+  background: var(--primary);
+  color: white;
+}
+th {
+  padding: 12px 16px;
+  text-align: right;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+}
+tbody tr:hover { background: #f5f7fa; }
+tbody tr:last-child td { border-bottom: none; }
+.highlight-row { background: var(--success-bg) !important; }
+.danger-row { background: var(--danger-bg) !important; }
+
+/* === METRIC BADGES === */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.metric-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.metric-card .metric-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.metric-card .metric-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.metric-card .metric-sub {
+  font-size: 11px;
+  color: var(--success);
+  margin-top: 4px;
+  font-weight: 500;
+}
+.metric-card.gold-border { border-color: var(--gold); }
+
+/* === QUOTE === */
+.expert-quote {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin: 24px 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.9;
+}
+.expert-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 72px;
+  opacity: 0.15;
+  font-family: serif;
+}
+.expert-quote .quote-author {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+/* === PROCESS FLOW === */
+.process-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 20px 0;
+}
+.process-step {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  position: relative;
+}
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 19px;
+  top: 50px;
+  bottom: -2px;
+  width: 2px;
+  background: var(--border);
+}
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.step-content { flex: 1; }
+.step-content h4 { margin: 0 0 6px; font-size: 16px; }
+.step-content p { font-size: 14px; color: var(--text-light); margin: 0; }
+
+/* === FUNNEL VISUAL === */
+.funnel-visual {
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.funnel-step {
+  padding: 14px 20px;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  max-width: 600px;
+}
+.funnel-step .funnel-num {
+  font-size: 20px;
+  font-weight: 700;
+  display: block;
+}
+.funnel-step .funnel-label {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* === TABS === */
+.tabs-container { margin: 20px 0; }
+.tab-buttons {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 0;
+  overflow-x: auto;
+}
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+.tab-content { display: none; padding: 20px 0; }
+.tab-content.active { display: block; }
+
+/* === TIMELINE === */
+.timeline {
+  position: relative;
+  padding-right: 40px;
+  margin: 20px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  right: -30px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--gold);
+}
+.timeline-item h4 { font-size: 15px; margin-bottom: 4px; }
+.timeline-item p { font-size: 14px; color: var(--text-light); }
+
+/* === DEFINITION BOX === */
+.def-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  margin: 12px 0;
+}
+.def-box .def-term {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.def-box .def-term-en {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+}
+.def-box .def-body {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 8px;
+  line-height: 1.8;
+}
+.def-box .def-example {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: white;
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text);
+  border-right: 3px solid var(--gold);
+}
+
+/* === COLLAPSIBLE === */
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  width: 100%;
+  text-align: right;
+  transition: all 0.2s;
+  margin-bottom: 4px;
+}
+.collapsible-header:hover { background: #eef1f5; }
+.collapsible-header .arrow {
+  transition: transform 0.2s;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.collapsible-header.open .arrow { transform: rotate(180deg); }
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.collapsible-body.open { max-height: 3000px; }
+.collapsible-inner {
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  background: white;
+}
+
+/* === COMPARISON === */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+.compare-item {
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.compare-item.win {
+  background: var(--success-bg);
+  border-color: var(--success);
+}
+.compare-item.lose {
+  background: var(--danger-bg);
+  border-color: var(--danger);
+}
+.compare-item .compare-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.compare-item.win .compare-label { color: var(--success); }
+.compare-item.lose .compare-label { color: var(--danger); }
+
+/* === LESSONS GRID === */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.lesson-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.lesson-card .lesson-num {
+  width: 32px;
+  height: 32px;
+  background: var(--gold);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.lesson-card h4 { font-size: 15px; margin-bottom: 8px; }
+.lesson-card p { font-size: 14px; color: var(--text-light); }
+
+/* === FOOTER === */
+.footer {
+  background: var(--primary);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 24px; }
+  .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .compare-grid { grid-template-columns: 1fr; }
+  .lessons-grid { grid-template-columns: 1fr; }
+  .hero-meta { flex-direction: column; gap: 8px; }
+  .section { padding: 30px 0; }
+  .card { padding: 20px; }
+}
+
+/* === PRINT === */
+@media print {
+  .toc-bar { display: none; }
+  .card { box-shadow: none; break-inside: avoid; }
+  .section { padding: 20px 0; }
+  body { font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="container hero-content">
+    <div class="badge"> مستودع أدوية الحوت - قسم التسويق الرقمي - تقرير تشغيلي داخلي - المرحلة الأولى</div>
+    <h1>JOYCOO-PLUS-1st-CAMP-APR-2026-DMD</h1>
+    <p class="subtitle">ماذا حدث في حملة جويكو بلس الأولى؟ ماذا تعلمنا؟ وما العمل في المرحلة القادمة؟</p>
+    <div class="hero-meta">
+      <span>إعداد: قسم التسويق الرقمي</span>
+      <span>التاريخ: 29 أبريل 2026</span>
+      <span>التصنيف: داخلي</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOC ============ -->
+<div class="toc-bar">
+  <div class="container">
+    <button class="toc-btn active" onclick="scrollToSection('section-1')">التسويق الرقمي</button>
+    <button class="toc-btn" onclick="scrollToSection('section-2')">البيانات والأرقام</button>
+    <button class="toc-btn" onclick="scrollToSection('section-3')">المقاييس والمؤشرات</button>
+    <button class="toc-btn" onclick="scrollToSection('section-4')">الدروس المستفادة</button>
+    <button class="toc-btn" onclick="scrollToSection('section-5')">عملية التطوير</button>
+    <button class="toc-btn" onclick="scrollToSection('section-6')">عملية البيع</button>
+    <button class="toc-btn" onclick="scrollToSection('section-7')">عملية العمليات</button>
+    <button class="toc-btn" onclick="scrollToSection('section-8')">عملية الإدارة</button>
+    <button class="toc-btn" onclick="scrollToSection('section-9')">الخطوات القادمة</button>
+  </div>
+</div>
+
+<!-- ============ SECTION 1: التسويق الرقمي ============ -->
+<div class="section" id="section-1">
+  <div class="container">
+
+    <div class="expert-quote" style="text-align: center;">
+      إذا أردت أن تفهم إلى أين يتجه مستقبل توزيع الأدوية، فلا تنظر إلى أرفف المستودع. <br> بل انظر إلى المحادثة التي تحدث بين أم في الزرقاء وشات بوت الساعة 11 مساء في يوم ثلاثاء عادي. <br> تلك المحادثة هي ما يحسم فيها نمو العقد القادم.
+      <div class="quote-author">- السوق يتغير في الواقع .. كما يتغير في المواقع ..</div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div>
+        <h2>عملية التسويق الرقمي: ماذا نفعل ولماذا</h2>
+        <div class="section-sub">العملية الأولى - حيث بدأت كل البيانات</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>قبل كل شيء: نحن في مرحلة تأسيس</h3>
+      <p>قبل ما نحكي عن الأرقام والنتائج، لازم نفهم شيء أساسي: الحملة الأولى كانت <strong>مرحلة تأسيس</strong>، تماما زي ما الصيدلية ما بتفتح بابها وتتوقع إيرادات من أول يوم. تأسيس الصيدلية يعني تجهيز المكان، تعيين الكادر، بناء علاقات مع الموردين، تحضير الأنظمة. وأول أسبوع ما تبيع فيه شي، هذا طبيعي جدا لأنك لسا في مرحلة بناء القاعدة.</p>
+      <p style="margin-top:12px;">حملتنا الرقمية نفس الموضوع. أنفقنا ~311 دينار على 7 أيام إعلانات. الهدف الأساسي كان <strong>جمع بيانات</strong> وتعليم الخوارزمية كيف السوق الأردني بيستجيب لمنتج جويكو بلس رقميا. حصلنا على بيانات أغلى من الانفاق نفسه، لأنها بيانات أولية حقيقية ما كان يقدر يوصلها أي استبيان أو بحث سوق تقليدي.</p>
+      <div class="insight-box gold">
+        <div class="insight-title">&#9670; الهدف كان واضح: تعلم لا بيع مباشر</div>
+        <p style="font-size:14px; margin:0;">المرحلة القادمة هي حيث نستفيد من الداتا. سنبدأ فورا بإعادة استهداف الأشخاص اللي تفاعلوا مع محتوانا، مع ردود محفوظة محسنة وعروض معاد هيكلتها. كل ما حصلناه في المرحلة الأولى هو أساس متين نبني عليه.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ما هو التسويق الرقمي بالضبط؟</h3>
+      <p>التسويق الرقمي هو العملية اللي فيها نوصل رسائل مدفوعة لأشخاص محددين عبر منصات إلكترونية مثل فيسبوك وانستغرام. الفرق الجوهري بينه وبين التسويق التقليدي (إعلانات الطرق، المجلات، التلفزيون) انه بيقدر يعرفنا بالضبط مين شاف الرسالة، مين اهتم، مين تواصل معنا، وكم كل خطوة كلفت.</p>
+
+      <div class="def-box" style="margin-top:16px;">
+        <div class="def-term">
+          الحملة الإعلانية
+          <span class="def-term-en">Ad Campaign</span>
+        </div>
+        <div class="def-body">
+          هي المهمة الكبرى اللي نحدد فيها هدف معين (مثلا: توليد وعي، أو الحصول على رسائل)، نحدد ميزانية، ونختار الجمهور المستهدف. الحملة تحتوي على مجموعة إعلانات ومجموعات إعلانية فرعية.
+        </div>
+        <div class="def-example">مثال: حملتنا الأولى اسمها "تشويق وإطلاق" - هدفها كان مشاهدات فيديو وتفاعل. حملتنا الثانية اسمها "رسائل التنقيب" - هدفها كان تواصل مباشر مع المهتمين.</div>
+      </div>
+
+      <div class="def-box">
+        <div class="def-term">
+          إعلان / الإبداع الإعلاني
+          <span class="def-term-en">Ad Creative</span>
+        </div>
+        <div class="def-body">
+          هو المحتوى الفعلي اللي بيشوفه الشخص: صورة، فيديو، نص، وزر الدعوة للعمل أو CTA . كل إعلان فيه محتوى مختلف يختبر ضد الآخر لنعرف شو بيشتغل أحسن.
+        </div>
+        <div class="def-example">مثال: عندنا 5 إعلانات فيديو (فيديوهات العواقب الصحية)، و5 إعلانات صور (عروض الشراء بأسعار مختلفة). كل واحد بيعطينا بيانات مختلفة.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>لماذا اخترنا ميتا (فيسبوك + انستغرام)؟</h3>
+      <p>تخيل انك مندوب مبيعات. عندك خيار: تزور 10 صيدليات بعمق - تعرف مخزونها وتفضيلات صاحبها - أو 100 صيدلية بسطحية وبالكاد تتذكر اسم أحد منها. الجواب واضح: العمق بيفوق الاتساع لما تكون الموارد محدودة.</p>
+      <p style="margin-top:10px;">نفس المنطق طبقناه على اختيار المنصات. بدل ما ننتشر على كل المنصات (تيك توك، سناب شات، لينكد ان، يوتيوب) بنفس الميزانية، اخترنا ميتا بس لأسباب واضحة:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>السبب</th><th>التفصيل</th><th>لماذا يهم</th></tr></thead>
+          <tbody>
+            <tr><td>الحجم</td><td>4.5+ مليون أردني على فيسبوك/انستغرام</td><td>جمهور كافي لنتعلم منه</td></tr>
+            <tr><td>الدقة</td><td>أقوى نظام استهداف في المنطقة</td><td>نقدر نوصل للناس الصح</td></tr>
+            <tr><td>التكلفة</td><td>من أرخص تكاليف الظهور في الأردن</td><td>أقل انفاق = أتعلم أكتر</td></tr>
+            <tr><td>التكامل</td><td>مسار مباشر: إعلان ← محادثة ← طلب</td><td>ما بنحتاج موقع إلكتروني</td></tr>
+            <tr><td>التعلم</td><td>نبني خبرة على منصة واحدة قبل التوسع</td><td>العمق قبل الاتساع</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>شجرة التسويق الرقمي: وين بالضبط نحنا</h3>
+      <p>التسويق الرقمي شجرة كبيرة وفيها فروع كثيرة. احنا اخترنا فرع واحد وتعمقنا وتخصصنا فيه:</p>
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>التسويق الرقمي (الشجرة الكبيرة)</h4>
+            <p>يشمل كل شيء من إعلانات غوغل للإيميل للتسويق بالمؤثرين</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>التسويق عبر السوشال ميديا (الفرع اللي اخترناه)</h4>
+            <p>منشورات عضوية + إعلانات مدفوعة على المنصات الاجتماعية</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>الإعلانات المدفوعة (تركيزنا الحالي)</h4>
+            <p>دفع أموال لمنصات لعرض محتوانا لجمهور محدد بدقة</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>إعلانات ميتا (فيسبوك + انستغرام)</h4>
+            <p>المنصة الوحيدة اللي اشتغلنا عليها لأنها الأنسب لهدفنا</p>
+          </div>
+        </div>
+      </div>
+      <div class="insight-box blue">
+        <div class="insight-title">&#9670; ليش ما اخترنا كل شيء؟</div>
+        <p style="font-size:14px; margin:0;"> الكفاءة والفعالية يعني انك تقول "لا" لعشر أشياء عشان تقول "نعم" لشيء واحد تنجح فيه. إعلانات غوغل تحتاج موقع إلكتروني (ما عندنا حتى الآن). وتيك توك جمهوره مختلف عن جمهور السكري. ولينكد ان للـB2B مستقبلا. كل شيء له وقته، والوقت حاليا هو وقت ميتا.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>المزيج التسويقي: الـ4P اللي تحكم كل قرار بزنس</h3>
+      <p>كل قرار في أي بزنس - بما فيه الحوت - بيعيش في إحدى أربع فئات. احنا كقسم تسويق رقمي عايشين داخل "الترويج" ونعتمد  على باقي الفئات ونتفاعل معها، لكن لازم نفهم الصورة الكاملة:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>العنصر</th><th>ماذا يعني</th><th>جويكو بلس كمثال</th><th>كيف يتصل بكل العمليات</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>المنتج</strong><br><span style="font-size:12px; color:var(--text-muted)">Product</span></td>
+              <td>شو بنبيع؟</td>
+              <td>جهاز قياس سكر ناطق بالعربي، عينة دم صغيرة، 9 مستويات إبرة</td>
+              <td>عملية التطوير تختار المنتجات، عملية البيع تبيعها</td>
+            </tr>
+            <tr>
+              <td><strong>السعر</strong><br><span style="font-size:12px; color:var(--text-muted)">Price</span></td>
+              <td>بكم بنبيع؟</td>
+              <td>عرض 35 شريحة: 9.99-12 دينار. عرض 60 شريحة: 20 دينار</td>
+              <td>عملية الإدارة تراقب الربحية، عملية البيع تتفاوض</td>
+            </tr>
+            <tr>
+              <td><strong>المكان</strong><br><span style="font-size:12px; color:var(--text-muted)">Place</span></td>
+              <td>وصل العميل يحصل عليه؟</td>
+              <td>مباشرة للمستهلك عبر الرسائل والتوصيل</td>
+              <td>عملية العمليات تدير التوصيل والتخزين</td>
+            </tr>
+            <tr>
+              <td><strong>الترويج</strong><br><span style="font-size:12px; color:var(--text-muted)">Promotion</span></td>
+              <td>العميل يعرف عنه؟</td>
+              <td>إعلانات ميتا: فيديوهات تعليمية + صور عروض</td>
+              <td>هنا احنا - نخلق أو نحفز الطلب اللي بيغذي كل العمليات</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box green">
+        <div class="insight-title">&#9670; الترويج يخلق أو يحفز الطلب اللي بيغذي الكل</div>
+        <p style="font-size:14px; margin:0;">إذا التسويق الرقمي يوصل 621,000 أردني بمحتوى عن منتجنا، عملية البيع بتصير أسهل لأن الصيدلية سمعت عنا، وعملية التطوير لتعرف شو السوق بيطلب، وعملية الإدارة تشوف نمو في الأرقام. كل شيء متصل.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>المنتج: جويكو بلس - شو بيعمل وهل هو فعلا مختلف؟</h3>
+      <p>جويكو بلس جهاز مراقبة الغلوكوز في الدم. فيه 20+ جهاز قياس سكر في السوق الأردني، لكن جويكو بلس عنده مزايا فريدة:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الميزة</th><th>شو بتعني بالعربي</th><th>ليش بتهم العميل</th><th>مين بيستفيد أكتر</th></tr></thead>
+          <tbody>
+            <tr><td>صوت عربي ناطق</td><td>الجهاز بيقرأ النتائج بصوت عال بالعربي</td><td>كبار السن وضعاف البصر يقدروا يفحصوا حالهم بدون مساعدة</td><td>المسنين، الأميين</td></tr>
+            <tr><td>عينة دم 0.6 ميكروليتر</td><td>من أصغر العينات في السوق</td><td>ألم أقل، خصوصا للأطفال الصغار</td><td>أهالي أطفال السكري</td></tr>
+            <tr><td> بـ9 مستويات لإبرة الوخز</td><td>الإبرة قابلة للتعديل</td><td>مناسب لكل أنواع البشرة والأعمار</td><td>كل المستخدمين</td></tr>
+            <tr><td>انزيم GDH</td><td>كيمياء متقدمة للشرائح</td><td>ما بيتأثر بأكسجين الدم - أدق للحوامل وفقر الدم</td><td>الحوامل، مرضى فقر الدم</td></tr>
+            <tr><td>قاذف شرائح تلقائي</td><td>التخلص من الشريحة بدون لمس</td><td>نظيف، ما في ملامسة دم</td><td>كل المستخدمين</td></tr>
+            <tr><td>بطاريات AAA</td><td>بطاريات عادية متوفرة في كل مكان</td><td>ما تحتاج بطاريات غالية خاصة</td><td>العائلات الأردنية</td></tr>
+            <tr><td>ذاكرة بـ1000 قراءة</td><td>يخزن النتائج مع التاريخ والوقت</td><td>الطبيب يقدر يراجع الاتجاهات</td><td>المرضى المنهكين</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;"><strong>الأهم من الميزات:</strong> احنا ما بنبيع جهاز قياس سكر. بنبيع <strong>تحول</strong>. من الاعتماد على الغير للاستقلالية، من الخوف لليقين، من الذنب (لما بوخز الطفل) للرحمة. هذا الفهم هو اللي شكل محتوانا الإعلاني.</p>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 2: البيانات والأرقام ============ -->
+<div class="section" id="section-2">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div>
+        <h2>البيانات والأرقام: ماذا حدث فعلا في الحملة</h2>
+        <div class="section-sub">النتائج الفعلية </div>
+      </div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric-card gold-border">
+        <div class="metric-value">621,180</div>
+        <div class="metric-label">إجمالي الظهور<br><span style="font-size:11px">Impressions</span></div>
+      </div>
+      <div class="metric-card gold-border">
+        <div class="metric-value">294,153</div>
+        <div class="metric-label">مشاهدة فيديو<br><span style="font-size:11px">Video Views (3s+)</span></div>
+      </div>
+      <div class="metric-card gold-border">
+        <div class="metric-value">255</div>
+        <div class="metric-label">محادثة مباشرة مع مهتم<br><span style="font-size:11px">Messaging Connections</span></div>
+      </div>
+      <div class="metric-card gold-border">
+        <div class="metric-value">$0.63</div>
+        <div class="metric-label">تكلفة كل 1,000 ظهور<br><span style="font-size:11px">CPM - أقل بـ65% من متوسط الأردن</span></div>
+        <div class="metric-sub">استثنائي</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">5.97%</div>
+        <div class="metric-label">نسبة التفاعل مع الرسائل<br><span style="font-size:11px">CTR (Messages)</span></div>
+        <div class="metric-sub">أعلى بـ3× من المعيار</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">~311 د.أ</div>
+        <div class="metric-label">إجمالي الانفاق الإعلاني<br><span style="font-size:11px">$438.15 بالدولار</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">2</div>
+        <div class="metric-label">عملية بيع فعلية<br><span style="font-size:11px">Purchases - كلاهما اناث</span></div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">352</div>
+        <div class="metric-label">حفظ محتوى<br><span style="font-size:11px">Saves - شخص حفظ المحتوى كمرجع</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>تشريح الحملتين</h3>
+      <p>شغلنا حملتين متوازيتين بتصميم واضح: الأولى تولد الوعي، والثانية تولد المحادثات.</p>
+
+      <h4 style="margin-top:20px;">الحملة الأولى: التشويق والإطلاق (جمع الإشارات)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>المقياس</th><th>الرقم</th><th>شو يعني</th><th>التقييم</th></tr></thead>
+          <tbody>
+            <tr><td>الانفاق</td><td>$355.50</td><td>المبلغ اللي دفعناه لميتا</td><td>ميزانية معقولة</td></tr>
+            <tr><td>الظهور</td><td>561,803</td><td>مرات عرض إعلاناتنا</td><td>حجم ممتاز</td></tr>
+            <tr><td>الوصول</td><td>485,069</td><td>أشخاص فريدين شافوا المحتوى</td><td>وصول واسع جدا</td></tr>
+            <tr><td>مشاهدات الفيديو</td><td>294,153</td><td>شاهدوا بما فيه الكفاية</td><td>الانجاز الأكبر</td></tr>
+            <tr class="highlight-row"><td>CPM</td><td>$0.63</td><td>تكلفة كل 1,000 ظهور</td><td>استثنائي - 4-8× أرخص من المتوسط</td></tr>
+            <tr><td>أفضل فيديو</td><td>V4-الكلى</td><td>89,727 مشاهدة</td><td>الأعلى أداء - مضاعفات الكلى</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="margin-top:20px;">الحملة الثانية: رسائل التنقيب (التواصل المباشر)</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>المقياس</th><th>الرقم</th><th>شو يعني</th><th>التقييم</th></tr></thead>
+          <tbody>
+            <tr><td>الانفاق</td><td>$82.65</td><td>المبلغ اللي دفعناه لميتا</td><td>جزء صغير من الميزانية</td></tr>
+            <tr><td>اتصالات الرسائل</td><td>255</td><td>شخص بدأ محادثة معنا</td><td>255 مهتم حقيقي</td></tr>
+            <tr class="highlight-row"><td>CTR الرسائل</td><td>5.97%</td><td>من كل 100 شاف الإعلان، 6 راسلونا</td><td>ممتاز - المعيار 1-2%</td></tr>
+            <tr><td>تكلفة كل محادثة</td><td>$0.32</td><td>كم كلفت كل محادثة</td><td>أرخص بـ36-84% من المعيار</td></tr>
+            <tr><td>المشتريات</td><td>2</td><td>شخص فعلا اشترى</td><td>بداية أولى</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>عمليتا البيع: ايش اتعلمنا من كل واحدة؟</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>التفصيل</th><th>المشترية 1: إخلاص عناية</th><th>المشترية 2: نجلاء صالح</th></tr></thead>
+          <tbody>
+            <tr><td>الموقع</td><td>الرصيفة، الزرقاء</td><td>شرق عمان</td></tr>
+            <tr><td>الجنس</td><td>أنثى</td><td>أنثى</td></tr>
+            <tr><td>العرض</td><td>عرض صغير - 35 شريحة</td><td>عرض كبير - 60 شريحة</td></tr>
+            <tr><td>السعر</td><td>12 دينار</td><td>20 دينار</td></tr>
+            <tr><td>التاريخ</td><td>23 أبريل</td><td>26 أبريل (بعد انتهاء الحملة!)</td></tr>
+            <tr><td>القناة</td><td>ماسنجر</td><td>واتساب</td></tr>
+            <tr><td>الإعلان</td><td>04-BG-NP (بدون سعر)</td><td>04-BG-NP (بدون سعر)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="insight-box gold">
+        <div class="insight-title">&#9670; خمس اكتشافات من بيعتين بس</div>
+        <p style="font-size:14px; margin:8px 0 0;"><strong>1.</strong> كلا المشتريتين نساء - رغم ان 84% من ميزانية الرسائل كانت للذكور. هذا يعني ان المرأة الأردنية هي صانعة قرار الشراء في مجال الصحة العائلية (كما كان افتراضنا سابقا أثناء تحضير الشرائح المستهدفة وشخصيات المستهلكين والمشترين).<br>
+        <strong>2.</strong> كلتاهما من ممر عمان-الزرقاء - المناطق الأقوى لوجستيا.<br>
+        <strong>3.</strong> قنوات مختلفة نجحت - ماسنجر وواتساب كلتاهما شغالة وما بنحتاج نختار واحدة بس.<br>
+        <strong>4.</strong> نجلاء اشترت بعد انتهاء الحملة بأيام - أثر الإعلان ما بينتهي لما تتوقف، الناس بتتذكر.<br>
+        <strong>5.</strong> عروض مختلفة (35 شريحة و60 شريحة) كلها لقت مشتري - الناس عندها حاجات مختلفة.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مسار الأداء: قمع التسويق الرقمي</h3>
+      <p>القمع التسويقي هو مراحل اللي بيمر فيها العميل من أول ما يشوف إعلاننا لحد ما يطلب. كل مرحلة بتنقص الأعداد - هذا طبيعي في كل بزنس بالدنيا:</p>
+      <div class="funnel-visual">
+        <div class="funnel-step" style="background:#0a2647; width:100%;">
+          <span class="funnel-num">621,180</span>
+          <span class="funnel-label">شوفوا إعلاننا (ظهور Impressions)</span>
+        </div>
+        <div class="funnel-step" style="background:#144272; width:90%;">
+          <span class="funnel-num">294,153</span>
+          <span class="funnel-label">شاهدوا الفيديو بما فيه الكفاية</span>
+        </div>
+        <div class="funnel-step" style="background:#205295; width:70%;">
+          <span class="funnel-num">53,363</span>
+          <span class="funnel-label">شافوا إعلان العرض</span>
+        </div>
+        <div class="funnel-step" style="background:#2c74b3; width:50%;">
+          <span class="funnel-num">255</span>
+          <span class="funnel-label">تواصلوا معنا برسالة</span>
+        </div>
+        <div class="funnel-step" style="background:#d4a843; width:30%;">
+          <span class="funnel-num">2</span>
+          <span class="funnel-label">اشتروا - وكلتاهما اناث</span>
+        </div>
+      </div>
+      <div class="insight-box blue">
+        <div class="insight-title">&#9670; ليش هذا القمع مفيد لكل العمليات؟</div>
+        <p style="font-size:14px; margin:0;">عملية البيع: لما المندوب يزور صيدلية وقبلها صاحبها يكون شاف إعلاننا أو العملاء سألوه عن الجهاز، التأسيس رح يصير أسهل. عملية التطوير: نعرف شو الناس فعلا بتبحث عنه. عملية الإدارة: الأرقام الحقيقية بتوجه القرارات. العمليات: نعرف من وين الطلبات بتيجي عشان نجهز اللوجستيات.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>فيديوهات العواقب: سلاحنا الأقوى</h3>
+      <p>الفيديوهات اللي حكوا عن مضاعفات السكري غير المسيطر عليه هي اللي حققت أعلى مشاهدة. ليش؟ لأن الخوف من الخسارة أقوى من وعد الربح. ما حدا بيهتم بـ"انزيم GDH" لحد ما يفهم ان جهازه الحالي ممكن يعطيه قراءات خاطئة بتؤدي لمشاكل خطيرة.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>الفيديو</th><th>المشاهدات</th><th>ليش نجح؟</th></tr></thead>
+          <tbody>
+            <tr class="highlight-row"><td>1</td><td>V4-الكلى</td><td style="font-weight:700; font-size:16px;">89,727</td><td>الخوف من الفشل الكلوي - أقوى خطاف</td></tr>
+            <tr><td>2</td><td>T-04 كشف الجهاز</td><td>58,640</td><td>صيغة تشويق فضولي</td></tr>
+            <tr><td>3</td><td>V3-الأعصاب</td><td>76,408</td><td>زاوية علمية + تفاعل عالي</td></tr>
+            <tr><td>4</td><td>V2-العين</td><td>37,190</td><td>خوف من ضعف البصر</td></tr>
+            <tr><td>5</td><td>V1-القلب</td><td>35,614</td><td>وعي بالعواقب الصحية</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الاختبار الإبداعي: مصفوفة 2×2 اللي أجابت على سؤالين</h3>
+      <p>صممنا 4 إعلانات بنفس المنتج بس فرق واحد: نصفهم يعرض السعر ونصفهم ما يعرضه. والفرق الثاني: عرض صغير (35 شريحة) مقابل عرض كبير (60 شريحة). هذا يسمى "اختبار A/B" - نختبر متغيرين في نفس الوقت:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>الإعلان</th><th>السعر ظاهر؟</th><th>الرسائل</th><th>التكلفة/رسالة</th><th>الأداء</th></tr></thead>
+          <tbody>
+            <tr class="highlight-row"><td>04-BG-NP</td><td>لا</td><td style="font-weight:700;">184</td><td style="font-weight:700;">$0.23</td><td>البطل المطلق - 72% من كل الرسائل</td></tr>
+            <tr><td>01-SM-NP</td><td>لا</td><td>52</td><td>$0.30</td><td>قوي</td></tr>
+            <tr><td>02-SM-P</td><td>نعم</td><td>18</td><td>$0.49</td><td>ضعيف</td></tr>
+            <tr class="danger-row"><td>03-BG-P</td><td>نعم</td><td>1</td><td>$4.15</td><td>فشل ذريع</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box gold">
+        <div class="insight-title">&#9670; الدرس الأهم: إخفاء السعر أفضل 12 ضعف من إظهاره</div>
+        <p style="font-size:14px; margin:0;">تخيل انك بتمشي في سوق. دكان عليها لافتة "جهاز سكر - 20 دينار." بتشوف السعر وبتقرر فورا انه غالي أو رخيص أو ما بتعرف إذا يستاهل - ومش راح تدخل. الدكان الثانية عليها لافتة "الجهاز اللي بيحكي عربي وبيشتغل بنقطة دم صغيرة. اسأل جوا." بفضول، بتدخل، البائع بيشرح، بيبني ثقة - وبعدين يخبرك بالسعر. <strong>السعر معلومة تكشف بعد بناء القيمة، لا قبلها.</strong> هذا مبدأ ساري في الكثير من عمليات البيع (وهو ما أثبتته البيانات).</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 3: المقاييس والمؤشرات ============ -->
+<div class="section" id="section-3">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div>
+        <h2>المقاييس والمؤشرات: كل مقياس مشروح بالعربي والانجليزي</h2>
+        <div class="section-sub">اللغة المشتركة اللي بتوحد فهم كل العمليات</div>
+      </div>
+    </div>
+
+    <p>كل مقياس هو علامة حيوية مثل ضغط الدم ونبض القلب للمريض. فهمهم بيخليك بكل عملية تفهم شو بصير في التسويق الرقمي بدون ما تحتاج خلفية تقنية.</p>
+
+    <div class="def-box">
+      <div class="def-term">CPM - تكلفة لكل ألف ظهور <span class="def-term-en">Cost Per Mille</span></div>
+      <div class="def-body">كم يكلف عرض إعلاننا 1,000 مرة. كل ما كان الرقم أقل، كل ما كان الوصول أرخص وأكفأ.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> $0.63 - المتوسط في الأردن $2-5. يعني نحنا نوصل للناس بـ4-8 أضعاف أرخص من المتوسط.<br>
+        <strong>بالمثل:</strong> مندوب المبيعات بيروح الصيدليات بربع تكلفة وقود مندوب المنافس.<br>
+        <strong>مناسب لهدفنا؟</strong> ممتاز - في مرحلة التأسيس بدنا نوصل بأقل تكلفة عشان نجمع أكبر داتا.
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-term">CTR - نسبة النقر <span class="def-term-en">Click-Through Rate</span></div>
+      <div class="def-body">من كل 100 شخص شاف الإعلان، كم نسبة اللي نقروا عليه أو تواصلوا معنا؟ هذا أهم مقياس لمدى اهتمام الناس بمحتواك.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> 5.97% (حملة الرسائل) - المتوسط 1-2%. يعني 6 من كل 100 شافوا الإعلان راسلونا.<br>
+        <strong>بالمثل:</strong> إذا وزعت 100 كرت بزنس في سوق، 6 أشخاص يتصلون. هذا ممتاز.<br>
+        <strong>مناسب لهدفنا؟</strong> ممتاز - الناس فعلا مهتمة بالمنتج.
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-term">CPC - تكلفة كل نقرة <span class="def-term-en">Cost Per Click</span></div>
+      <div class="def-body">كم كلفة كل نقرة فردية على الإعلان. كل ما كان أقل، كل ما كان الانفاق أكفأ.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> $0.033 - تقريبا 5 قروش أردني لكل نقرة.<br>
+        <strong>بالمثل:</strong> أرخص من أي ورقة إعلان مطبوعة ممكن توزعها.<br>
+        <strong>مناسب لهدفنا؟</strong> ممتاز.
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-term">CPA - تكلفة اكتساب عميل <span class="def-term-en">Cost Per Acquisition</span></div>
+      <div class="def-body">كم يكلف الحصول على عميل واحد فعلا اشترى. هذا المقياس بيوضح العلاقة بين الانفاق والإيراد.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> $219.08 (~155 دينار) لكل عملية بيع.<br>
+        <strong>بالمثل:</strong> إذا مصاريف مندوبك (عمولة + بنزين + سفر) بتكلف 155 دينار لكل طلب صيدلية، المندوب محتاج إما طلبات أكتر أو مصاريف أقل.<br>
+        <strong>مناسب لهدفنا؟</strong> في المرحلة الأولى، الرقم الطبيعي يكون عالي لأننا نبني البنية من الصفر. في المرحلة الثانية، مع ردود محفوظة وإعادة استهداف، الرقم بيقل كثير.
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-term">ROAS - العائد على الانفاق الإعلاني <span class="def-term-en">Return On Ad Spend</span></div>
+      <div class="def-body">كل دولار ننفقه على الإعلانات، كم دولار يرجعلنا؟ هذا المقياس الرئيسي لقياس ربحية الإعلانات.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> 0.10 - كل دولار أنفقناه رجعلنا 10 قروش.<br>
+        <strong>بالمثل:</strong> استثمرت 100 دينار في زيارة صيدلية وطلبت منهم 10 دينار بس.<br>
+        <strong>مناسب لهدفنا؟</strong> رقم المرحلة الأولى قابل للتحسين. مع بنية ردود محفوظة وعروض معيارية جديدة، العائد بيتحسن جذريا. والأهم: الإعلانات نفسها اشترت بيانات ووعي لا تقدر بثمن.
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-term">الوصول <span class="def-term-en">Reach</span></div>
+      <div class="def-body">عدد الأشخاص الفريدين (المختلفين) اللي شافوا إعلاننا مرة واحدة على الأقل. الوصول مختلف عن الظهور لأن الشخص الواحد ممكن يشوف الإعلان عدة مرات.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> ~470,000 شخص فريد شاف إعلاننا.<br>
+        <strong>بالمثل:</strong> لو عندك 470,000 شخص يعرف اسم جويكو بلس، هذا أقوى من أي إعلان طريق أو مجلة ممكن تشتريها.<br>
+        <strong>مناسب لهدفنا؟</strong> أصل التأسيس - هؤلاء 470,000 شخص قابليين لإعادة الاستهداف في المرحلة الثانية.
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-term">التكرار <span class="def-term-en">Frequency</span></div>
+      <div class="def-body">كم مرة شاف نفس الشخص الإعلان. التكرار المناسب بيخلي الشخص يتذكر من دون ما يمل.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> 1.25 - يعني كل شخص شاف الإعلان تقريبا مرة وربع بالمتوسط.<br>
+        <strong>مناسب لهدفنا؟</strong> رقم صحي - ما في تشبع. الناس ما زالت بتشوف الإعلان لأول مرة، ما زال عندها مجال تتأثر أكتر.
+      </div>
+    </div>
+
+    <div class="def-box">
+      <div class="def-term">معدل التحويل <span class="def-term-en">Conversion Rate</span></div>
+      <div class="def-body">نسبة الناس اللي اشتروا من بين كل اللي تواصلوا معنا. هذا المقياس بيوضح كفاءة عملية البيع بعد ما الوصول تم.</div>
+      <div class="def-example">
+        <strong>رقمنا:</strong> 0.78% (2 من 255) - المعيار في المنطقة 3-8%.<br>
+        <strong>بالمثل:</strong> مندوب بيع دخل 255 صيدلية واتفق مع 2 بس. كثير صيدلياتInterest وماتو ما اشتروا.<br>
+        <strong>مناسب لهدفنا؟</strong> في المرحلة الأولى كانت البنية التحتية للمحادثة بسيطة. مع ردود محفوظة جاهزة وتسلسل متابعة، النسبة بترتفع بشكل ملحوظ. والأهم: الإعلانات هي اللي جابت 255 مهتم، والهذا انجاز بحد ذاته.
+      </div>
+    </div>
+
+    <div class="insight-box green">
+      <div class="insight-title">&#9670; الصورة الكبيرة واضحة: آلة الانتباه شغالة بطلاقة</div>
+      <p style="font-size:14px; margin:0;">مقاييس الانتباه (CPM, CTR, مشاهدات الفيديو) كلها عالمية المستوى والأفضل في الأردن. هذا يعني المحتوى الإعلاني بيجذب الناس بفعالية. ما بنحتاج نصلح الإعلانات - بنحتاج نصلح البنية اللي بعد الإعلان مباشرة: ردود محفوظة أسرع، عروض أوضح، نظام متابعة مهتمين.</p>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 4: الدروس المستفادة ============ -->
+<div class="section" id="section-4">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <div>
+        <h2>الدروس المستفادة: أعظم ما نعلمناه من 7 أيام</h2>
+        <div class="section-sub">مكتوبة لكل من يحب أن يفهم التسويق الرقمي من الصفر</div>
+      </div>
+    </div>
+
+    <div class="lessons-grid">
+      <div class="lesson-card">
+        <div class="lesson-num">1</div>
+        <h4>إخفاء السعر أقوى 12 ضعف من إظهاره</h4>
+        <p>الإعلان بدون سعر جاب 236 محادثة. الإعلان مع السعر جاب 19 بس. السر: الفضول بيجيب الناس داخل المحادثة، والثقة بتنبني هناك قبل ما تكشف التكلفة. هذا مبدأ ساري في عملية البيع وعملية التطوير على حد سواء.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">2</div>
+        <h4>النساء هن المشتريات الحقيقيات</h4>
+        <p>حوالي 84% من ميزانية الرسائل كانت للذكور. 100% من المشتريات جاءت من اناث. في البيت الأردني، المرأة هي اللي بتدير صحة العيلة. الرجال ممكن يكون عندهم المرض، بس النساء هن اللي بيبحثوا ويقرروا ويشتروا الجهاز.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">3</div>
+        <h4>255 محادثة = أثمن من 255 عميل</h4>
+        <p>كل شخص تواصل معنا هو بيانات حقيقية: موقعه، اهتمامه، لغته، التوقيت اللي راسل فيه. هذه بيانات ما نقدر نجيبها بأي طريقة ثانية. في المرحلة الثانية، هؤلاء أول نعيد نستهدفهم.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">4</div>
+        <h4>المحتوى التعليمي يفوق المحتوى الترويجي</h4>
+        <p>فيديو "مضاعفات السكري على الكلى" حصل على 89,727 مشاهدة. الناس بتحب تتعلم قبل ما تشتري. كل فيديو بيوصل معلومة صحية هو استثمار في الثقة والوعي بالعلامة.</p>
+      </div>
+
+      <div class="lesson-card">
+        <div class="lesson-num">5</div>
+        <h4>أثر الإعلان ما بينتهي لما تتوقف</h4>
+        <p>نجلاء اشترت يوم 26 أبريل - بعد ما الحملة وقفت يوم 25. الناس بتتذكر، وبتاخذ وقتها بالقرار. ما بنحتاج نستعجل. المتابعة الهادية بعد الحملة جزء من العملية.</p>
+      </div>
+      <div class="lesson-card">
+        <div class="lesson-num">6</div>
+        <h4>اختبار A/B هو الطريقة الوحيدة لنعرف شو بيشتغل</h4>
+        <p>مصفوفة 2×2 (حجم العرض × ظهور السعر) أجابت على سؤالين بدقة. بدونها كنا بنخمن. معها بنعرف. الدرس: اختبر دايما. البيانات بتتحدث، الافتراضات بتضلل.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:24px;">
+      <h3>كيف يفهم العميل قرار الشراء؟</h3>
+      <p>كل قرار شراء - سواء من إعلان أو من زيارة صيدلية - بيعيش تحت معادلة:</p>
+      <div class="def-box" style="text-align:center; padding:24px;">
+        <div style="font-size:15px; font-weight:700; color:var(--primary); margin-bottom:10px;">
+          نقاط القرار = (الانتباه × الرغبة × الإقناع) ÷ (الجهد للقيمة + الوقت للقيمة + التردد)
+        </div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:8px;">
+          كل ما زاد البسط (الانتباه والرغبة) وقل المقام (الجهد والوقت)، كل ما زادت فرصة الشراء.
+        </div>
+      </div>
+      <p style="margin-top:16px;">إعلاناتنا حققت <strong>انتباه استثنائي</strong> (621,000 ظهور بـ438 دولار بس). المقام كان عالي لأنه لازم يرسلوا رسالة، وينتظروا رد، ويعطوا عنوانهم، ويرتبوا التوصيل. الحل: نقلل الجهد. الردود المحفوظة بتقلل وقت الانتظار. الكتالوج الواضح بيقلل التردد.</p>
+    </div>
+
+    <div class="card">
+      <h3>الفوضى الوسطى Messy Middle: ليش الناس ما بتمشي بالترتيب في خط مستقيم؟</h3>
+      <p>رحلة العميل ليست خط مستقيم من "شاف إعلان" لـ"اشترى." هي عملية فوضوية بتتأرجح بين:</p>
+      <div class="compare-grid">
+        <div class="compare-item" style="border-color:var(--accent); background:var(--info-bg);">
+          <div class="compare-label" style="color:var(--accent);">الاستكشاف: "شو عندكم؟"</div>
+          <p style="font-size:14px;">شاف الإعلان، بحث عنه بجوجل، سأل صاحبه، نسي، شاف الإعلان مرة ثانية، سأل الصيدلاني، راسلنا...</p>
+        </div>
+        <div class="compare-item" style="border-color:var(--gold); background:#fef9e7;">
+          <div class="compare-label" style="color:var(--gold);">التقييم: "هل هذا فعلا الأفضل؟"</div>
+          <p style="font-size:14px;">قارن بين خيارات، سأل عن الأسعار، طلب رأي بنته، سكت 3 أيام، حكى مع أخته، رجع سأل عن التوصيل...</p>
+        </div>
+      </div>
+      <p style="margin-top:12px;"><strong>الدرس لكل العمليات:</strong> لما الزبون يقول "خليني أفكر" أو يسكت، هو هيك ما رفض. هو في مرحلة التقييم. المتابعة بعد 24 ساعة و72 ساعة بتفرق كثير. ما نخلي محادثة تموت من غير ما نتابع.</p>
+    </div>
+
+    <div class="card">
+      <h3>مفارقة الجنس: التفسير الأردني العملي</h3>
+      <p>البيانات قالت: أنفقنا على الذكور أكثر، والاناث هن اللي اشتروا. ليش؟ لأن في البيت الأردني:</p>
+      <ul style="padding-right:20px; margin:10px 0; font-size:15px;">
+        <li style="margin-bottom:8px;">الزوجة بتبحث عن جهاز القياس لزوجها المريض بالسكري</li>
+        <li style="margin-bottom:8px;">البنت بتشتري الجهاز لأبوها المسن</li>
+        <li style="margin-bottom:8px;">الأم بتدير روتين فحص طفلها المصاب بالسكري</li>
+      </ul>
+      <p>الرجال ممكن يكون عندهم المرض. بس النساء هن اللي <strong>يديرن</strong> المرض. وهن اللي بيبحثوا ويقارنوا ويقرروا ويشتروا. هذا الاكتشاف بيغير كل شيء: الإعلانات القادمة بتكون موجهة للمرأة كمقدمة رعاية.</p>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 5: عملية التطوير ============ -->
+<div class="section" id="section-5">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <div>
+        <h2>عملية التطوير: فرص جديدة من بيانات حقيقية</h2>
+        <div class="section-sub">كيف التسويق الرقمي يغذي عملية تطوير الأعمال</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>منجم البيانات: شو كشفت حملتنا؟</h3>
+      <p>كل حملة رقمية تولد بيانات ما نقدر نحصل عليها بأي طريقة ثانية. هذي البيانات تخدم عملية التطوير مباشرة:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>نقطة البيانات</th><th>القيمة</th><th>كيف تخدم عملية التطوير</th></tr></thead>
+          <tbody>
+            <tr><td>النساء المشتريات الأساسيات</td><td>100% من المشتريات من اناث</td><td>أي منتج B2C جديد لازم يستهدف المقدمة كجمهور أساسي</td></tr>
+            <tr><td>الزرقاء وشرق عمان نقاط ساخنة</td><td>كلتا المشتريتين من هالمجال</td><td>تركيز الشراكات والعملاء المحتملين في هالمناطق</td></tr>
+            <tr><td>المحتوى التعليمي الأقوى</td><td>89,727 مشاهدة لفيديو الكلى</td><td>المحتوى الصحي التعليمي هو قناة نمو رئيسية</td></tr>
+            <tr><td>إربد "ساخنة بس ما اتحولت"</td><td>69,024 وصول لكن 3,124 رسالة</td><td>فرصة: حملة إربد مخصصة لأنهم اتعلموا عن المنتج بس ما تواصلوا</td></tr>
+            <tr><td>التعليقات إشارات مجانية</td><td>112 تعليق على الإعلانات</td><td>الناس اللي بيعلقوا مهتمين بس محتاجين دفعة إضافية</td></tr>
+            <tr><td>الحفظ = أعلى إشارة نية</td><td>352 شخص حفض المحتوى</td><td>هؤلاء أقرب للشراء من أي فئة تانية</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>فرص تطوير أعمال مباشرة من الداتا</h3>
+      <div class="process-flow">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>توسيع B2C لأي منتج من كتالوجنا</h4>
+            <p>جويكو بلس التجربة الأولى. إذا النموذج اشتغل، نطبقه على أي منتج من أي صنف عندنا. عندنا بيانات حقيقية عن السوق ونظام إعلانات مجرب.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>اختبار الطلب قبل الاستثمار اللوجستي</h4>
+            <p>قبل ما نوسع لمحافظة جديدة، نقدر نشغل حملة رقمية صغيرة (50$) لنتأكد ان في طلب. هذا ينقذ آلاف الدنانير من استثمارات مبنية على تخمين.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>قاعدة بيانات مستهلكين مباشر</h4>
+            <p>أول مرة في تاريخ الحوت، عندنا اتصال مباشر مع المستهلك النهائي. هذه بيانات بتخبرنا شو الناس بتبحث عنه، شو بيشتروا، وشو بيعترضوا عليه.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 6: عملية البيع ============ -->
+<div class="section" id="section-6">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <div>
+        <h2>عملية البيع: كيف التسويق الرقمي بيغذي خط الانتاج</h2>
+        <div class="section-sub">ماذا يكسب مندوبو البيع من كل ما نفعله رقميا</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التسويق الرقمي يخلق سحب، عملية البيع تخلق دفع</h3>
+      <p>لما الاتنين يشتغلوا مع بعض، الصيدلية ما عندها سبب ترفض. تخيل المندوب لما يدخل الصيدلية ويقول:</p>
+      <div class="expert-quote" style="background:var(--success); font-size:15px;">
+        نحنا مش بس بنوزع هالجهاز. نحنا كمان بنقدر نوجه المرضى لعندكم من خلال التسويق الرقمي. فمثلا وصلنا لـ621,000 أردني بمحتوى فيديو عن جويكو بلس. وكان عندنا 255 محادثة مباشرة مع مشترين محتملين وقريبين من صيدليتكم. الصيدليات اللي بتأسس جويكو بلس رح تستفيد من الطلب اللي نحنا بنخلقه وبنوجهه لعندها (بدون أي ذكر لـD2C).
+      </div>
+      <p>بهالجملة، شغل المندوب بيسهل أكثر. والتسويق الرقمي بيتحول من "مصروف إضافي" لـ"آلة توليد طلب".</p>
+    </div>
+
+    <div class="card">
+      <h3>ماذا يقدم التسويق الرقمي لعملية البيع</h3>
+      <div class="lessons-grid">
+        <div class="lesson-card">
+          <h4>عملاء أدفأ للمحادثات</h4>
+          <p>لما تزور صيدلية وتقول "جويكو بلس" والصيدلاني يقول "آه شفته على فيسبوك"، الشغل بيسهل كتير لأن الوعي موجود مسبقا.</p>
+        </div>
+        <div class="lesson-card">
+          <h4>بيانات طلب المستهلك</h4>
+          <p>"في آخر 30 يوم، 255 شخص في عمان والزرقاء سألوا عن جويكو بلس." هذا سلاح قوي لعملية البيع.</p>
+        </div>
+        <div class="lesson-card">
+          <h4>استخبارات تنافسية</h4>
+          <p>إعلاناتنا بتتنافس في نفس المساحة مع أكيو-تشيك وون تاتش. بنقدر نشوف شو المنافسين بيعملوا من بيانات ميتا نفسها.</p>
+        </div>
+        <div class="lesson-card">
+          <h4>أصول محتوى جاهزة</h4>
+          <p>الفيديوهات والصور وجداول المقارنة اللي بنصنعها للتسويق الرقمي ممكن نستخدمها كمواد بيع لزيارات الصيدليات.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الربط بين B2B و B2C: نموذج واحد بيدعم الثاني</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>النموذج</th><th>الوصف</th><th>كيف الرقمي بيخدمه</th></tr></thead>
+          <tbody>
+            <tr><td><strong>B2B</strong><br>الحوت → الصيدلية</td><td>النموذج التقليدي: مندوب يبيع للصيدلية</td><td>الوعي بالعلامة بيخلي الصيدلية تتقبل أسرع</td></tr>
+            <tr><td><strong>B2C</strong><br>الحوت → المستهلك</td><td>النموذج الجديد: إعلان مباشر للمستهلك</td><td>البيانات بتخبرنا شو الناس بيطلبوا فعلا</td></tr>
+            <tr class="highlight-row"><td><strong>التأثير المشترك</strong></td><td>المستهلك اللي اكتشف المنتج إلكترونيا ممكن يروح يشتريه من الصيدلية</td><td>كل عملية بيع رقمية ممكن تولد طلب B2B بدون ما نتوقع</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 7: عملية العمليات ============ -->
+<div class="section" id="section-7">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">7</div>
+      <div>
+        <h2> العمليات: البنية اللوجستية والتوصيل</h2>
+        <div class="section-sub">كيف العملية التشغيلية بتدعم وتستفيد من التسويق الرقمي</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>التوصيل: اللي اختبرناه في المرحلة الأولى شتغل</h3>
+      <p>عملية التوصيل والتسليم كانت جزء من التجربة الأولى وبالنتيجة اشتغلت بشكل طبيعي. المشترية إخلاص في الرصيفة استلمت طلبها، والمشترية نجلاء في شرق عمان استلمت طلبها. البنية موجودة وتعمل.</p>
+      <div class="insight-box green">
+        <div class="insight-title">&#9670; ممر عمان-الزرقاء هو المجال الأقوى</div>
+        <p style="font-size:14px; margin:0;">كلتا المشتريتين من هالممر. هذا منطقي لأن المقر في الزرقاء والعمليات الأساسية في عمان. في المرحلة القادمة، نحتاج نجهز التوصيل بكفاءة أكتر في هالمناطق عشان نستفيد من أي زيادة في الطلب.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>كيف التسويق الرقمي يساعد العمليات</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>المعلومة الرقمية</th><th>كيف تساعد العمليات</th></tr></thead>
+          <tbody>
+            <tr><td>مع 253 محادثة فيها طلبات توصيل</td><td>نقدر نتوقع حجم الطلبات الجغرافي ونجهز اللوجستيات مسبقا</td></tr>
+            <tr><td>بيانات الموقع (عمان 62%، الزرقاء 12.5%)</td><td>نركز القدرة التوصيلية حيث الطلب موجود فعلا</td></tr>
+            <tr><td>مشترية عبر واتساب + مشترية عبر ماسنجر</td><td>كلتا القنوات شغالت - ما نحتاج نختار واحدة بس</td></tr>
+            <tr><td>التعليقات والرسائل فيها أسئلة عن التوصيل</td><td>نفهم شو يقلق الناس قبل ما يشتروا ونحل المشكلة</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ما يعني "المكان" في عصر الـB2C</h3>
+      <p>في النموذج التقليدي، "المكان" = مستودع ← صيدلية. في النموذج الجديد، "المكان" = مستودع ← باب البيت. هذا بيغير طلبات عملية العمليات:</p>
+      <ul style="padding-right:20px; margin:10px 0; font-size:15px;">
+        <li style="margin-bottom:8px;"><strong>سرعة التوصيل:</strong> كل ما كان أسرع، كل ما قل التردد عند العميل</li>
+        <li style="margin-bottom:8px;"><strong>تتبع الشحنة:</strong> رسالة واتساب عند الإرسال بتبني ثقة</li>
+        <li style="margin-bottom:8px;"><strong>وضوح تكلفة التوصيل:</strong> مجاني أو ثابت - ما في مفاجآت</li>
+        <li style="margin-bottom:8px;"><strong>خريطة التغطية:</strong> المناطق اللي نوصلها واضحة من الأول</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 8: عملية الإدارة ============ -->
+<div class="section" id="section-8">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">8</div>
+      <div>
+        <h2>عملية الإدارة: النظرة الاستراتيجية</h2>
+        <div class="section-sub">كيف تقرأ الانفاق الرقمي بالعقل الاستثماري</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>مقارنة العملات: دولار مقابل دينار</h3>
+      <p>الحساب الإعلاني بيشتغل بالدولار. المنتج بينبعه بالدينار. هذا يعني عندنا مصفوفة عملات لازم نكون واعين فيها:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>البند</th><th>بالدولار</th><th>بالدينار</th><th>ملاحظة</th></tr></thead>
+          <tbody>
+            <tr><td>إجمالي الانفاق الإعلاني</td><td>$438.15</td><td>~311 د.أ</td><td>ننفق بالدولار</td></tr>
+            <tr><td>البيع 1 (إخلاص)</td><td>~$16.92</td><td>12 د.أ</td><td>نكسب بالدينار</td></tr>
+            <tr><td>البيع 2 (نجلاء)</td><td>~$28.20</td><td>20 د.أ</td><td>نكسب بالدينار</td></tr>
+            <tr><td>إجمالي الإيراد</td><td>~$45.12</td><td>32 د.أ</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:12px;"><strong>سعر الصرف:</strong> 1 دينار أردني ≈ 1.41 دولار أمريكي (ثابت، مربوط بالدولار).</p>
+    </div>
+
+    <div class="card">
+      <h3>كيف تقيم انفاق التسويق الرقمي كإدارة</h3>
+      <p>الـ438 دولار اللي أنفقناهم مش مجرد "تكلفة." هي استثمار اشترى أصول حقيقية:</p>
+
+      <h4>1. بيانات سوقية فريدة</h4>
+      <p>نعرف ان النساء هن المشتريات، ان NP تتفوق على P، ان فيديو الكلى هو الأقوى. هذه معلومات ما بنقدر نحصل عليها بأي ثمن من غير التجربة الحقيقية.</p>
+
+      <h4>2. جمهور مؤهل لإعادة الاستهداف</h4>
+      <p>معنا 50,000+ شخص شاهدوا محتوانا ويمكن إعادة استهدافهم في المرحلة الثانية ببدل ما نبدأ من الصفر مع جمهور جديد. هذا يوفر جزء كبير من ميزانية الحملة القادمة.</p>
+
+      <h4>3. منهجية مجربة</h4>
+      <p>اختبار 2×2، نظام التسمية، التحليل ذو الطبقات السبع - كلها أنظمة تبقى وتتطور مع كل حملة. استثمار في البنية التحتية للتسويق.</p>
+
+      <h4>4. أصول محتوى قابلة لإعادة الاستخدام</h4>
+      <p>فيديوهات تعليمية، صور إعلانية، نصوص مقارنة - كلها ممكن نستخدمها في حملات قادمة أو حتى في زيارات المندوبين للصيدليات.</p>
+
+      <div class="insight-box gold">
+        <div class="insight-title">&#9670; النظرة الصحيحة: انفاق تأسيسي، مش انفاق تشغيلي</div>
+        <p style="font-size:14px; margin:0;">أول صيدلية تفتح بتبني التجهيزات من غير ما تبيع في الأسبوع الأول. نفس الموضوع: حملتنا الأولى بنت البنية اللي كل الحملات القادمة بتعتمد عليها. المفاضلة بين الانفاق والإيراد الفوري ما بتعكس القيمة الحقيقية.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============ SECTION 9: الخطوات القادمة ============ -->
+<div class="section" id="section-9">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">9</div>
+      <div>
+        <h2>الخطوات القادمة: المرحلة الثانية خلال 30 يوم</h2>
+        <div class="section-sub">استغلال الداتا اللي جمعناها فورا - بناء على ما تعلمناه</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>الخطة: من البيانات للتنفيذ الفوري</h3>
+      <p>كل خطوة مبنية على درس حقيقي من الحملة الأولى. ما في شيء تخميني:</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>إعادة هيكلة العروض - إطار الشرائح المعياري الجديد</h4>
+          <p>بعد الدرس المستفاد ان إخفاء السعر أقوى 12 ضعف، كل إعلانات المرحلة الثانية بتكون بدون سعر (NP فقط). والعروض المالية بتتغير من ثنائية جامدة (35 أو 60 شريحة) إلى نظام مرن:</p>
+          <div class="table-wrap" style="margin-top:10px;">
+            <table>
+              <thead><tr><th>الحزمة</th><th>الشرائح</th><th>السعر التقريبي</th><th>المناسب لـ</th></tr></thead>
+              <tbody>
+                <tr><td>الأساسية</td><td>35 (10 + 25 مكافأة)</td><td>9.99-12 د.أ</td><td>أول تجربة</td></tr>
+                <tr><td>+50 شريحة</td><td>85</td><td>~20 د.أ</td><td>المستخدم العادي</td></tr>
+                <tr><td>+100 شريحة</td><td>135</td><td>~28 د.أ</td><td>فحص منتظم</td></tr>
+                <tr class="highlight-row"><td>+150 شريحة</td><td>185</td><td>~42 د.أ</td><td>مراقبة مكثفة</td></tr>
+                <tr><td>+200 شريحة</td><td>235</td><td>~72 د.أ</td><td>شراء بالجملة</td></tr>
+                <tr><td>+300 شريحة</td><td>335</td><td>~102 د.أ</td><td>استخدام عائلي</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size:14px; color:var(--text-light); margin-top:8px;"><strong>ليش هذا النظام؟</strong> حاجز الدخول منخفض (35 شريحة بـ12 دينار)، والترقية تحصل تدريجيا حسب الحاجة. كل ما العميل بيحتاج شرائح أكتر، بيرجع يشتري. هذا يبني علاقة طويلة الأمد.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>نشر ردود محفوظة محسنة</h4>
+          <p>من أكبر الدروس: 255 محادثة جاءت لكن اهتمامها كان متوسطا. المرحلة الثانية بتتضمن ردود أكثر مرونة واستيعاب لكل موقف:</p>
+          <div class="table-wrap" style="margin-top:10px;">
+            <table>
+              <thead><tr><th>الكود</th><th>الفئة</th><th>الموعد</th></tr></thead>
+              <tbody>
+                <tr><td>ترحيب</td><td>رسالة ترحيب دافئة + سؤال عن الحاجة + تحديد الشخصية</td><td>أول تواصل</td></tr>
+                <tr><td>معلومات</td><td>ملخص الميزات بلغة بسيطة وواضحة</td><td>"شو هذا الجهاز؟"</td></tr>
+                <tr><td>سعر العرض الصغير</td><td>9.99 دينار: جهاز + ملحقات + 35 شريحة</td><td>بعد بناء القيمة</td></tr>
+                <tr><td>سعر العرض الكبير</td><td>20 دينار: جهاز + ملحقات + 60 شريحة</td><td>لمن يريد أكتر</td></tr>
+                <tr><td>اعتراض السعر</td><td>تحليل تكلفة الفحص الواحد مقابل الفحص بالصيدلية</td><td>"غالي!"</td></tr>
+                <tr><td>إغلاق الطلب</td><td>تأكيد: الاسم، الهاتف، العنوان، العرض</td><td>العميل جاهز</td></tr>
+                <tr><td>متابعة 24 ساعة</td><td>"فقط بتأكد إذا عندك أسئلة ثانية..."</td><td>محادثة سابقة صامتة</td></tr>
+                <tr><td>متابعة 72 ساعة</td><td>مشاركة شهادة أو محتوى ذي صلة</td><td>ما زال صامت</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h4>حملات إعادة الاستهداف - استغلال الأصول المجانية</h4>
+          <p>عندنا أصول مجانية ما بنحتاج ندفع عليها من جديد:</p>
+          <ul style="padding-right:20px; margin:6px 0; font-size:14px;">
+            <li style="margin-bottom:6px;"><strong>50,000+</strong> شخص شاهدوا فيديو ThruPlay كامل - نعيد نعرض عليهم إعلانات التحويل</li>
+            <li style="margin-bottom:6px;"><strong>352</strong> شخص حفض المحتوى - أقرب للشراء من أي فئة تانية</li>
+            <li style="margin-bottom:6px;"><strong>253</strong> محادثة بدأت بس ما اكتملت - نتابعهم برسائل مخصصة</li>
+            <li style="margin-bottom:6px;"><strong>363</strong> شخص عمل لايك للصفحة - جمهور مؤهل للإعلانات</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h4>تحويل الاستهداف لصالح الاناث</h4>
+          <p>بعد اكتشاف ان 100% من المشتريات من اناث رغم ان 84% من الانفاق كان على الذكور، المرحلة الثانية بتكون:</p>
+          <ul style="padding-right:20px; margin:6px 0; font-size:14px;">
+            <li style="margin-bottom:6px;">إعلانات وعي وتحويل موجهة للاناث 30-54</li>
+            <li style="margin-bottom:6px;">إعلانات تعليمية ممكن تبقى موجهة للذكور (لأنهم بيولدوا محادثات كتير بس مشتريات أقل)</li>
+            <li style="margin-bottom:6px;">نصوص إعلانية تكتب بالضمير المؤنث - "أم، بنت، زوجة" بدل المبني للمذكر</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <h4>نظام تصنيف المحادثات</h4>
+          <p>كل محادثة بتتصرف على أربعة محاور عشان نبني بيانات منظمة:</p>
+          <div class="table-wrap" style="margin-top:10px;">
+            <table>
+              <thead><tr><th>المحور</th><th>التصنيفات</th><th>الفائدة</th></tr></thead>
+              <tbody>
+                <tr><td>موقع القمع</td><td>محتمل ← متردد ← مؤكد ← مشتري ← VIP</td><td>إدارة المتابعة وتحديد الأولويات</td></tr>
+                <tr><td>الشخصية الطبية</td><td>مريض نفسه / مقدم رعاية / مختص صحي</td><td>تخصيص الرد حسب الحاجة</td></tr>
+                <tr><td>الاعتراض</td><td>سعر / ثقة / توفر شرائح / موقع / تأخير</td><td>تحسين المحتوى الإعلاني والمحادثي</td></tr>
+                <tr><td>التوصيل</td><td>عمان / الزرقاء / محافظات أخرى</td><td>تنظيم اللوجستيات</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <h4>إطلاق أوفلاين - البيانات غير المتصلة</h4>
+          <p>مبيعاتنا تحصل عبر الرسائل والدفع عند التسليم (أوفلاين). خوارزمية ميتا ما تتعلم من مبيعاتنا إلا إذا أخبرناها. رفع بيانات المبيعات لميتا كأحداث تحويل بيخلي الخوارزمية تعرف شكل "المشتري الحقيقي" وتحسن الاستهداف تلقائيا.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>ملخص: شو بيتغير بين المرحلة الأولى والثانية</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>العنصر</th><th>المرحلة الأولى</th><th>المرحلة الثانية</th></tr></thead>
+          <tbody>
+            <tr><td>الهدف</td><td>جمع بيانات وتعلم</td><td>استغلال الداتا وإعادة الاستهداف</td></tr>
+            <tr><td>الاستهداف</td><td>جمهور بارد (Broad)</td><td>جمهور دافئ (Warm) + بارد جديد</td></tr>
+            <tr><td>الإبداعات</td><td>مزيج: مع سعر + بدون سعر</td><td>بدون سعر فقط (NP Only)</td></tr>
+            <tr><td>العروض</td><td>ثنائي: 35 شريحة أو 60 شريحة</td><td>معياري: 35 + إضافات (50, 100, 150, 200, 300)</td></tr>
+            <tr><td>الردود</td><td>يدوية بالكامل</td><td>ردود محفوظة + نظام متابعة</td></tr>
+            <tr><td>التصنيف</td><td>ما كان</td><td>4 محاور لكل محادثة</td></tr>
+            <tr><td>الجنس</td><td>84% للذكور</td><td>50%+ للاناث في حملات التحويل</td></tr>
+            <tr><td>التوقيت</td><td>~30 يوم</td><td>~30 يوم</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>كيف كل عملية بتستفيد من المرحلة الثانية</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>العملية</th><th>كيف بتستفيد</th></tr></thead>
+          <tbody>
+            <tr><td><strong>التسويق الرقمي</strong></td><td>ردود محفوظة + إعادة استهداف + بيانات أوفلاين + أداء أفضل</td></tr>
+            <tr><td><strong>عملية البيع</strong></td><td>عملاء أدفأ (الصيدلية سمعت عنا) + بيانات طلب + أصول محتوى للزيارات</td></tr>
+            <tr><td><strong>عملية التطوير</strong></td><td>بيانات سوق حقيقية + فرص شراكات + اختبار طلب قبل استثمار لوجستي</td></tr>
+            <tr><td><strong>عملية العمليات</strong></td><td>توقعات طلب واضحة + تتبع جغرافي + استعداد مبكر</td></tr>
+            <tr><td><strong>عملية الإدارة</strong></td><td>عائد أفضل على الاستثمار + بيانات لقرارات أفضل + نمو في الوعي بالعلامة</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="expert-quote" style="background: linear-gradient(135deg, var(--gold), #c4963a); color: #1a1a2e;">
+      الإعلانات اشتغلت. الاستراتيجية اشتغلت. إطار المحتوى اشتغل. نظام التسمية والتصنيف اشتغل. الدروس استُوعِبت. الأصول بُنِيَت. الجمهور جاهز. الردود المحفوظة جاهزة. بإضافة عروض معيارية مطورة. يصبح كل شيء جاهز للمرحلة الثانية. وما بقي إلا التنفيذ.
+      <div class="quote-author">- مستند على البيانات الفعلية للحملة الأولى - من 19-27 أبريل 2026</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div class="footer">
+  <div class="container">
+    <p style="font-size:18px; font-weight:600; margin-bottom:10px;">مستودع أدوية الحوت</p>
+    <p style="margin-bottom:4px;">التقرير مبني على بيانات Meta Ads API (v25.0) مستخرجة في 27 أبريل 2026</p>
+    <p style="margin-bottom:4px;">مدعومة بسجلات تتبع المبيعات، وإطار استراتيجي المحتوى، ونظام التصنيف التشغيلي</p>
+    <p>وثائق داخلية - جميع العمليات</p>
+  </div>
+</div>
+
+<script>
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  document.querySelectorAll('.toc-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// Sticky nav highlight on scroll
+const sections = document.querySelectorAll('.section[id]');
+const tocBtns = document.querySelectorAll('.toc-btn');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      tocBtns.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('onclick').includes(id));
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => observer.observe(s));
+
+// Collapsible sections
+document.querySelectorAll('.collapsible-header').forEach(header => {
+  header.addEventListener('click', () => {
+    header.classList.toggle('open');
+    const body = header.nextElementSibling;
+    body.classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
